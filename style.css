@@ -186,7 +186,6 @@ section {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
 }
 
 .cardapio-item {
@@ -252,9 +251,118 @@ section {
 }
 
 .servicos {
-    background-color: white;
+    background-color: var(--segundary-color);
+    height: auto;
+    padding-block: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.servicos-item {
+    width: 400px;
+    height: 500px;
+    border: 4px solid var(--primary-color);
+    border-radius: 24px;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.servicos-item img {
+    filter: drop-shadow(4px 4px 4px #0005);
+}
+
+.servicos-item h4 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-shadow: 4px 4px 4px #0005;
+}
+
+.servicos-item p {
+    text-align: center;
+    text-shadow: 4px 4px 4px #0005;
 }
 
 footer {
-    height: 1526px;
+    height: 526px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer nav {
+    display: flex;
+    width: 75%;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 120px;
+    gap: 16px;
+}
+
+.nav-item.logo {
+    justify-content: center;
+    padding-top: 0;
+}
+
+.nav-item h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.nav-item menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav-item li {
+    display: flex;
+    gap: 12px;
+    width: 200px;
+}
+
+.social a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    transition: 0.6s;
+}
+
+.social a :hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.copy-right {
+    height: 72px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    border-top: 2px solid var(--segundary-color);
 }
