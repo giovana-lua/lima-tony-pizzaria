@@ -21,6 +21,10 @@ li {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--segundary-color);
@@ -35,6 +39,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: var(--default-padding);
+    background-color: #fff7;
+    z-index: 999;
 }
 
 header menu {
@@ -45,7 +51,7 @@ header menu {
 
 header li {
     padding: 4px 8px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 header li:hover {
@@ -365,4 +371,91 @@ footer nav {
     font-weight: 300;
     font-style: italic;
     border-top: 2px solid var(--segundary-color);
+}
+
+@media (max-width:1024px) {
+     :root {
+        --default-padding: 0 48px;
+    }
+    header {
+        left: 0;
+        top: 64px;
+        position: absolute;
+        background-color: transparent;
+    }
+    header menu {
+        width: 100vw;
+        height: 64px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: var(--primary-color);
+        color: #fff;
+        justify-content: space-evenly;
+    }
+    header li:hover {
+        color: var(--primary-color);
+    }
+    .home {
+        grid-template-rows: none;
+        place-content: center;
+    }
+    .home .container-produtos {
+        display: none;
+    }
+    .container-top {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 128px;
+    }
+    .container-produtos {
+        gap: 32px;
+    }
+    .produto {
+        width: auto;
+    }
+    .produto:nth-child(3),
+    .produto:nth-child(4),
+    .produto:nth-child(5) {
+        display: none;
+    }
+    .produto img {
+        width: 100%;
+    }
+    .cardapio-item {
+        border: none;
+    }
+    .servicos-container {
+        flex-direction: column;
+        gap: 48px;
+    }
+    .servicos-item {
+        height: 260px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .servicos-item p {
+        width: 330px;
+    }
+    footer nav {
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+    .nav-item {
+        padding: 0;
+        height: auto;
+    }
+    .nav-item:nth-child(2) {
+        display: none;
+    }
+    .social li {
+        justify-content: end;
+    }
+    .copy-right {
+        margin-bottom: 64px;
+    }
 }
