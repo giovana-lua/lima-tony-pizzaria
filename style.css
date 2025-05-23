@@ -1,461 +1,486 @@
-:root {
-    --primary-color: #f07807;
-    --segundary-color: #f7e5d8;
-    --default-padding: 0 80px;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul,
-ol,
-li {
-    list-style: none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--segundary-color);
-}
-
-header {
-    position: fixed;
-    height: 60px;
-    width: 100%;
-    top: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--default-padding);
-    background-color: #fff7;
-    z-index: 999;
-}
-
-header menu {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-}
-
-header li {
-    padding: 4px 8px;
-    transition: 0.5s;
-}
-
-header li:hover {
-    background-color: var(--segundary-color);
-    box-shadow: 0 4px 8px #0005;
-}
-
-header button {
-    height: 48px;
-    width: 120px;
-    border-radius: 12px;
-    border: none;
-    box-shadow: 0 4px 8px #0005;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--segundary-color);
-    color: var(--primary-color);
-    font-weight: 600;
-    font-family: inherit;
-}
-
-section {
-    height: 100vh;
-    padding: var(--default-padding);
-}
-
-.home {
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    background-image: url(./img/bg-home.svg);
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: contain;
-}
-
-.container-top {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 64px;
-}
-
-.container-top h2 {
-    position: relative;
-    bottom: 80px;
-    font-size: 4rem;
-    font-weight: 500;
-    font-style: italic;
-    width: 568px;
-}
-
-.container-top span {
-    color: var(--primary-color);
-}
-
-.container-produtos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.produto {
-    position: relative;
-    display: flex;
-    box-shadow: 0 4px 8px #0005;
-    border-radius: 12px;
-}
-
-.add-pizza {
-    position: absolute;
-    top: -16px;
-    right: -16px;
-    display: grid;
-    place-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    font-size: 2rem;
-    color: white;
-    border-radius: 12px;
-    border: 4px solid white;
-    opacity: 0;
-    transition: .6s;
-}
-
-.produto:hover .add-pizza {
-    opacity: 1;
-}
-
-.overflow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-}
-
-.container-info {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 16px;
-    bottom: -36px;
-    height: 36px;
-    width: 100%;
-    background-color: #0008;
-    border-radius: 0 0 8px 8px;
-    transition: .6s;
-}
-
-.produto:hover .container-info {
-    bottom: 0;
-}
-
-.container-info p {
-    font-size: 10px;
-    font-weight: 400;
-    width: 102px;
-    color: white;
-}
-
-.container-info span {
-    display: grid;
-    place-content: center;
-    width: 57px;
-    height: 20px;
-    background-color: var(--primary-color);
-    font-size: 10px;
-    color: white;
-    border-radius: 4px;
-}
-
-.cardapio {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.cardapio-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-bottom: 1px solid var(--primary-color);
-    height: 260px;
-}
-
-.cardapio-item:last-child {
-    border: none;
-}
-
-.section-tittle {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.section-tittle h3 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    font-weight: 400;
-}
-
-.item-texto {
-    display: flex;
-    justify-content: space-between;
-}
-
-.item-texto h4,
-.item-texto a {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.bebida {
-    box-shadow: none;
-    transition: 0.5s;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 4px;
-}
-
-.bebida p {
-    width: 100%;
-}
-
-.bebida .preco {
-    color: var(--primary-color);
-}
-
-.bebida .descricao {
-    font-size: 0.6rem;
-}
-
-.bebida:hover {
-    box-shadow: 0 4px 8px #0005;
-}
-
-.servicos {
-    background-color: var(--segundary-color);
-    height: auto;
-    padding-block: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.servicos-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.servicos-item {
-    width: 400px;
-    height: 500px;
-    border: 4px solid var(--primary-color);
-    border-radius: 24px;
-    padding: 42px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.servicos-item img {
-    filter: drop-shadow(4px 4px 4px #0005);
-}
-
-.servicos-item h4 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    text-shadow: 4px 4px 4px #0005;
-}
-
-.servicos-item p {
-    text-align: center;
-    text-shadow: 4px 4px 4px #0005;
-}
-
-footer {
-    height: 526px;
-    background-color: var(--primary-color);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer nav {
-    display: flex;
-    width: 75%;
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-top: 120px;
-    gap: 16px;
-}
-
-.nav-item.logo {
-    justify-content: center;
-    padding-top: 0;
-}
-
-.nav-item h4 {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.nav-item menu {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.nav-item li {
-    display: flex;
-    gap: 12px;
-    width: 200px;
-}
-
-.social a {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    display: grid;
-    place-content: center;
-    font-size: 1.5rem;
-    transition: 0.6s;
-}
-
-.social a :hover {
-    background-color: #fff;
-    color: var(--primary-color);
-}
-
-.copy-right {
-    height: 72px;
-    width: 100%;
-    display: grid;
-    place-content: center;
-    font-size: 0.8rem;
-    font-weight: 300;
-    font-style: italic;
-    border-top: 2px solid var(--segundary-color);
-}
-
-@media (max-width:1024px) {
-     :root {
-        --default-padding: 0 48px;
-    }
-    header {
-        left: 0;
-        top: 64px;
-        position: absolute;
-        background-color: transparent;
-    }
-    header menu {
-        width: 100vw;
-        height: 64px;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        background-color: var(--primary-color);
-        color: #fff;
-        justify-content: space-evenly;
-    }
-    header li:hover {
-        color: var(--primary-color);
-    }
-    .home {
-        grid-template-rows: none;
-        place-content: center;
-    }
-    .home .container-produtos {
-        display: none;
-    }
-    .container-top {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 128px;
-    }
-    .container-produtos {
-        gap: 32px;
-    }
-    .produto {
-        width: auto;
-    }
-    .produto:nth-child(3),
-    .produto:nth-child(4),
-    .produto:nth-child(5) {
-        display: none;
-    }
-    .produto img {
-        width: 100%;
-    }
-    .cardapio-item {
-        border: none;
-    }
-    .servicos-container {
-        flex-direction: column;
-        gap: 48px;
-    }
-    .servicos-item {
-        height: 260px;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    .servicos-item p {
-        width: 330px;
-    }
-    footer nav {
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 400px;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-    }
-    .nav-item {
-        padding: 0;
-        height: auto;
-    }
-    .nav-item:nth-child(2) {
-        display: none;
-    }
-    .social li {
-        justify-content: end;
-    }
-    .copy-right {
-        margin-bottom: 64px;
-    }
-}
+                                                               :root {
+                                                                  --primary-color: #f07807;
+                                                                  --segundary-color: #f7e5d8;
+                                                                  --default-padding: 0 80px;
+                                                              }
+                                                              
+                                                              * {
+                                                                  padding: 0;
+                                                                  margin: 0;
+                                                                  box-sizing: border-box;
+                                                              }
+                                                              
+                                                              a {
+                                                                  text-decoration: none;
+                                                                  color: inherit;
+                                                              }
+                                                              
+                                                              ul,
+                                                              ol,
+                                                              li {
+                                                                  list-style: none;
+                                                              }
+                                                              
+                                                              html {
+                                                                  scroll-behavior: smooth;
+                                                              }
+                                                              
+                                                              body {
+                                                                  font-family: "Poppins", sans-serif;
+                                                                  background-color: var(--segundary-color);
+                                                              }
+                                                              
+                                                              header {
+                                                                  position: fixed;
+                                                                  height: 60px;
+                                                                  width: 100%;
+                                                                  top: 60px;
+                                                                  display: flex;
+                                                                  justify-content: space-between;
+                                                                  align-items: center;
+                                                                  padding: var(--default-padding);
+                                                                  background-color: #fff7;
+                                                                  z-index: 999;
+                                                              }
+                                                              
+                                                              header menu {
+                                                                  display: flex;
+                                                                  align-items: center;
+                                                                  gap: 48px;
+                                                              }
+                                                              
+                                                              header li {
+                                                                  padding: 4px 8px;
+                                                                  transition: 0.5s;
+                                                              }
+                                                              
+                                                              header li:hover {
+                                                                  background-color: var(--segundary-color);
+                                                                  box-shadow: 0 4px 8px #0005;
+                                                              }
+                                                              
+                                                              header button {
+                                                                  height: 48px;
+                                                                  width: 120px;
+                                                                  border-radius: 12px;
+                                                                  border: none;
+                                                                  box-shadow: 0 4px 8px #0005;
+                                                                  display: flex;
+                                                                  justify-content: center;
+                                                                  align-items: center;
+                                                                  gap: 8px;
+                                                                  background-color: var(--segundary-color);
+                                                                  color: var(--primary-color);
+                                                                  font-weight: 600;
+                                                                  font-family: inherit;
+                                                              }
+                                                              
+                                                              section {
+                                                                  height: 100vh;
+                                                                  padding: var(--default-padding);
+                                                              }
+                                                              
+                                                              .home {
+                                                                  display: grid;
+                                                                  grid-template-rows: 3fr 1fr;
+                                                                  background-image: url(./img/bg-home.svg);
+                                                                  background-repeat: no-repeat;
+                                                                  background-position: top right;
+                                                                  background-size: contain;
+                                                              }
+                                                              
+                                                              .container-top {
+                                                                  display: flex;
+                                                                  justify-content: center;
+                                                                  align-items: end;
+                                                                  gap: 64px;
+                                                              }
+                                                              
+                                                              .container-top h2 {
+                                                                  position: relative;
+                                                                  bottom: 80px;
+                                                                  font-size: 4rem;
+                                                                  font-weight: 500;
+                                                                  font-style: italic;
+                                                                  width: 568px;
+                                                              }
+                                                              
+                                                              .container-top span {
+                                                                  color: var(--primary-color);
+                                                              }
+                                                              
+                                                              .container-produtos {
+                                                                  display: flex;
+                                                                  justify-content: space-between;
+                                                                  align-items: center;
+                                                              }
+                                                              
+                                                              .produto {
+                                                                  position: relative;
+                                                                  display: flex;
+                                                                  box-shadow: 0 4px 8px #0005;
+                                                                  border-radius: 12px;
+                                                              }
+                                                              
+                                                              .add-pizza {
+                                                                  position: absolute;
+                                                                  top: -16px;
+                                                                  right: -16px;
+                                                                  display: grid;
+                                                                  place-content: center;
+                                                                  width: 40px;
+                                                                  height: 40px;
+                                                                  background-color: var(--primary-color);
+                                                                  font-size: 2rem;
+                                                                  color: white;
+                                                                  border-radius: 12px;
+                                                                  border: 4px solid white;
+                                                                  opacity: 0;
+                                                                  transition: .6s;
+                                                              }
+                                                              
+                                                              .produto:hover .add-pizza {
+                                                                  opacity: 1;
+                                                              }
+                                                              
+                                                              .overflow {
+                                                                  position: absolute;
+                                                                  top: 0;
+                                                                  left: 0;
+                                                                  right: 0;
+                                                                  bottom: 0;
+                                                                  overflow: hidden;
+                                                              }
+                                                              
+                                                              .container-info {
+                                                                  position: absolute;
+                                                                  display: flex;
+                                                                  justify-content: space-between;
+                                                                  align-items: center;
+                                                                  padding: 0 16px;
+                                                                  bottom: -36px;
+                                                                  height: 36px;
+                                                                  width: 100%;
+                                                                  background-color: #0008;
+                                                                  border-radius: 0 0 8px 8px;
+                                                                  transition: .6s;
+                                                              }
+                                                              
+                                                              .produto:hover .container-info {
+                                                                  bottom: 0;
+                                                              }
+                                                              
+                                                              .container-info p {
+                                                                  font-size: 10px;
+                                                                  font-weight: 400;
+                                                                  width: 102px;
+                                                                  color: white;
+                                                              }
+                                                              
+                                                              .container-info span {
+                                                                  display: grid;
+                                                                  place-content: center;
+                                                                  width: 57px;
+                                                                  height: 20px;
+                                                                  background-color: var(--primary-color);
+                                                                  font-size: 10px;
+                                                                  color: white;
+                                                                  border-radius: 4px;
+                                                              }
+                                                              
+                                                              .cardapio {
+                                                                  background-color: white;
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                              }
+                                                              
+                                                              .cardapio-item {
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  justify-content: space-evenly;
+                                                                  border-bottom: 1px solid var(--primary-color);
+                                                                  height: 260px;
+                                                              }
+                                                              
+                                                              .cardapio-item:last-child {
+                                                                  border: none;
+                                                              }
+                                                              
+                                                              .section-tittle {
+                                                                  display: flex;
+                                                                  gap: 24px;
+                                                                  align-items: center;
+                                                              }
+                                                              
+                                                              .section-tittle h3 {
+                                                                  font-size: 2.5rem;
+                                                                  color: var(--primary-color);
+                                                                  font-weight: 400;
+                                                              }
+                                                              
+                                                              .item-texto {
+                                                                  display: flex;
+                                                                  justify-content: space-between;
+                                                              }
+                                                              
+                                                              .item-texto h4,
+                                                              .item-texto a {
+                                                                  color: var(--primary-color);
+                                                                  font-size: 1.5rem;
+                                                                  font-weight: 600;
+                                                              }
+                                                              
+                                                              .bebida {
+                                                                  box-shadow: none;
+                                                                  transition: 0.5s;
+                                                                  padding: 8px;
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  align-items: center;
+                                                                  border-radius: 4px;
+                                                              }
+                                                              
+                                                              .bebida p {
+                                                                  width: 100%;
+                                                              }
+                                                              
+                                                              .bebida .preco {
+                                                                  color: var(--primary-color);
+                                                              }
+                                                              
+                                                              .bebida .descricao {
+                                                                  font-size: 0.6rem;
+                                                              }
+                                                              
+                                                              .bebida:hover {
+                                                                  box-shadow: 0 4px 8px #0005;
+                                                              }
+                                                              
+                                                              .servicos {
+                                                                  background-color: var(--segundary-color);
+                                                                  height: auto;
+                                                                  padding-block: 32px;
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  gap: 32px;
+                                                              }
+                                                              
+                                                              .servicos-container {
+                                                                  display: flex;
+                                                                  justify-content: space-between;
+                                                              }
+                                                              
+                                                              .servicos-item {
+                                                                  width: 400px;
+                                                                  height: 500px;
+                                                                  border: 4px solid var(--primary-color);
+                                                                  border-radius: 24px;
+                                                                  padding: 42px;
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  justify-content: space-evenly;
+                                                                  align-items: center;
+                                                              }
+                                                              
+                                                              .servicos-item img {
+                                                                  filter: drop-shadow(4px 4px 4px #0005);
+                                                              }
+                                                              
+                                                              .servicos-item h4 {
+                                                                  font-size: 2.5rem;
+                                                                  font-weight: 500;
+                                                                  color: var(--primary-color);
+                                                                  text-shadow: 4px 4px 4px #0005;
+                                                              }
+                                                              
+                                                              .servicos-item p {
+                                                                  text-align: center;
+                                                                  text-shadow: 4px 4px 4px #0005;
+                                                              }
+                                                              
+                                                              footer {
+                                                                  height: 526px;
+                                                                  background-color: var(--primary-color);
+                                                                  color: white;
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  justify-content: space-between;
+                                                                  align-items: center;
+                                                              }
+                                                              
+                                                              footer nav {
+                                                                  display: flex;
+                                                                  width: 75%;
+                                                                  flex-grow: 1;
+                                                                  justify-content: space-between;
+                                                                  align-items: center;
+                                                              }
+                                                              
+                                                              .nav-item {
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  height: 100%;
+                                                                  padding-top: 120px;
+                                                                  gap: 16px;
+                                                              }
+                                                              
+                                                              .nav-item.logo {
+                                                                  justify-content: center;
+                                                                  padding-top: 0;
+                                                              }
+                                                              
+                                                              .nav-item h4 {
+                                                                  font-size: 1.5rem;
+                                                                  font-weight: 500;
+                                                              }
+                                                              
+                                                              .nav-item menu {
+                                                                  display: flex;
+                                                                  flex-direction: column;
+                                                                  gap: 16px;
+                                                              }
+                                                              
+                                                              .nav-item li {
+                                                                  display: flex;
+                                                                  gap: 12px;
+                                                                  width: 200px;
+                                                              }
+                                                              
+                                                              .social a {
+                                                                  width: 48px;
+                                                                  height: 48px;
+                                                                  border-radius: 50%;
+                                                                  border: 3px solid #fff;
+                                                                  display: grid;
+                                                                  place-content: center;
+                                                                  font-size: 1.5rem;
+                                                                  transition: 0.6s;
+                                                              }
+                                                              
+                                                              .social a :hover {
+                                                                  background-color: #fff;
+                                                                  color: var(--primary-color);
+                                                              }
+                                                              
+                                                              .copy-right {
+                                                                  height: 72px;
+                                                                  width: 100%;
+                                                                  display: grid;
+                                                                  place-content: center;
+                                                                  font-size: 0.8rem;
+                                                                  font-weight: 300;
+                                                                  font-style: italic;
+                                                                  border-top: 2px solid var(--segundary-color);
+                                                              }
+                                                              
+                                                              @media (max-width:1024px) {
+                                                                   :root {
+                                                                      --default-padding: 0 48px;
+                                                                  }
+                                                                  header {
+                                                                      left: 0;
+                                                                      top: 64px;
+                                                                      position: absolute;
+                                                                      background-color: transparent;
+                                                                  }
+                                                                  header menu {
+                                                                      width: 100vw;
+                                                                      height: 64px;
+                                                                      position: fixed;
+                                                                      left: 0;
+                                                                      bottom: 0;
+                                                                      background-color: var(--primary-color);
+                                                                      color: #fff;
+                                                                      justify-content: space-evenly;
+                                                                  }
+                                                                  header li:hover {
+                                                                      color: var(--primary-color);
+                                                                  }
+                                                                  .home {
+                                                                      grid-template-rows: none;
+                                                                      place-content: center;
+                                                                  }
+                                                                  .home .container-produtos {
+                                                                      display: none;
+                                                                  }
+                                                                  .container-top {
+                                                                      flex-direction: column-reverse;
+                                                                      align-items: center;
+                                                                      gap: 128px;
+                                                                  }
+                                                                  .container-produtos {
+                                                                      gap: 32px;
+                                                                  }
+                                                                  .produto {
+                                                                      width: auto;
+                                                                  }
+                                                                  .produto:nth-child(3),
+                                                                  .produto:nth-child(4),
+                                                                  .produto:nth-child(5) {
+                                                                      display: none;
+                                                                  }
+                                                                  .produto img {
+                                                                      width: 100%;
+                                                                  }
+                                                                  .cardapio-item {
+                                                                      border: none;
+                                                                  }
+                                                                  .servicos-container {
+                                                                      flex-direction: column;
+                                                                      gap: 48px;
+                                                                  }
+                                                                  .servicos-item {
+                                                                      height: 260px;
+                                                                      width: 100%;
+                                                                      flex-wrap: wrap;
+                                                                  }
+                                                                  .servicos-item p {
+                                                                      width: 330px;
+                                                                  }
+                                                                  footer nav {
+                                                                      flex-direction: column;
+                                                                      flex-wrap: wrap;
+                                                                      height: 400px;
+                                                                      justify-content: center;
+                                                                      align-items: center;
+                                                                      gap: 32px;
+                                                                  }
+                                                                  .nav-item {
+                                                                      padding: 0;
+                                                                      height: auto;
+                                                                  }
+                                                                  .nav-item:nth-child(2) {
+                                                                      display: none;
+                                                                  }
+                                                                  .social li {
+                                                                      justify-content: end;
+                                                                  }
+                                                                  .copy-right {
+                                                                      margin-bottom: 64px;
+                                                                  }
+                                                                  @media (max-width: 768px) {
+                                                                      .home img {
+                                                                          display: none;
+                                                                      }
+                                                                      .produto:nth-child(2),
+                                                                      .produto:nth-child(3),
+                                                                      .produto:nth-child(6) {
+                                                                          display: none;
+                                                                      }
+                                                                      .item-texto a {
+                                                                          display: none;
+                                                                      }
+                                                                      .cardapio {
+                                                                          width: 320px;
+                                                                      }
+                                                                      .servicos-item {
+                                                                          flex-direction: column;
+                                                                          flex-wrap: wrap;
+                                                                          justify-content: center;
+                                                                          align-items: center;
+                                                                      }
+                                                                      .servicos-container p {
+                                                                          display: none;
+                                                                      }
+                                                                  }
+                                                              }
